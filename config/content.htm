@@ -823,9 +823,40 @@ Plotly.newPlot('plot', data, layout)
 <div class="flex flex-grow flex-col gap-3">
 <div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap">
 <div class="markdown prose w-full break-words dark:prose-invert light">
-<p></p>
-<p></p>
-<p>3.在 CoppeliaSim 中，zmqRemoteAPI 是一個非常有用的模塊，它可以用於以下一些常見的應用場景：</p>
+<p>1. zmqRemoteAPI 是由 CoppeliaSim 提供的一种通信接口，CoppeliaSim 是一款强大的 3D 仿真软件，广泛应用于机器人技术、自动化、虚拟现实等领域。zmqRemoteAPI 可以让开发人员使用各种编程语言（如 Python、C++、Java 等）编写代码，并通过该接口与 CoppeliaSim 进行交互和通信。</p>
+<p>借助 zmqRemoteAPI，开发人员可以控制 CoppeliaSim 中的物体、传感器和动作等，并接收从仿真场景中返回的数据，如机器人位置、传感器读数等。这种通信方式非常灵活，可以为 CoppeliaSim 提供更多的应用场景和功能。</p>
+<p>因此，zmqRemoteAPI 是 CoppeliaSim 中的一种通信接口，可以让开发人员使用各种编程语言与 CoppeliaSim 进行交互和通信，从而扩展了 CoppeliaSim 的功能和应用范围。</p>
+<p>2. 在 Python 中使用 zmqRemoteAPI 与 CoppeliaSim 建立连接，需要遵循以下步骤：</p>
+<ol>
+<li>
+<p>启动 CoppeliaSim 并打开你的场景。</p>
+</li>
+<li>
+<p>确认场景中的 remoteApi 功能已启用。你可以在 CoppeliaSim 菜单栏中找到 "Add-ons" -&gt; "Remote API" -&gt; "Enable remote API"。确保 "Enable the remote API server" 和 "Enable the remote API client" 都选中。</p>
+</li>
+<li>
+<p>在 Python 中导入 vrep 模块，这是 CoppeliaSim 提供的 Python 接口。</p>
+</li>
+<li>
+<p>创建一个 vrep.simxOpMode_oneshot 和一个 vrep.simx_opmode_blocking 变量，它们用于定义远程API的操作模式。</p>
+</li>
+<li>
+<p>使用 vrep.simxStart 函数连接到 CoppeliaSim。该函数将返回一个客户端 ID，用于标识客户端并在后续的操作中使用。</p>
+</li>
+<li>
+<p>使用 vrep.simxGetObjectHandle 函数获取要控制的对象的句柄。</p>
+</li>
+<li>
+<p>使用 vrep.simxSetJointTargetPosition 或 vrep.simxSetJointTargetVelocity 函数设置关节目标位置或速度。</p>
+</li>
+<li>
+<p>使用 vrep.simxGetVisionSensorImage 函数获取传感器的图像。</p>
+</li>
+<li>
+<p>使用 vrep.simxFinish 函数断开与 CoppeliaSim 的连接。</p>
+</li>
+</ol>
+<p>3. 在 CoppeliaSim 中，zmqRemoteAPI 是一個非常有用的模塊，它可以用於以下一些常見的應用場景：</p>
 <ol>
 <li>
 <p>控制機器人：zmqRemoteAPI 可以用於控制機器人在 CoppeliaSim 模擬器中的運動和行為，包括設置關節位置、速度和力矩等參數，控制機器人的運動軌跡和姿態，以及獲取機器人的感測器數據和影像信息等。</p>
@@ -841,10 +872,10 @@ Plotly.newPlot('plot', data, layout)
 </li>
 </ol>
 <p>總之，zmqRemoteAPI 可以幫助使用者更加靈活地控制 CoppeliaSim 中的機器人和物體，從而實現更多的應用場景，如機器人控制、自主導航、自動化測試和物體檢測等。</p>
-<p></p>
-</div>
-</div>
-</div>
-</div>
-</div>
+&gt;
 <div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 600; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
