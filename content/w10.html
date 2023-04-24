@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Schedule.html'>Schedule</a><li><a href='bubblerob.html'>bubblerob</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Brython_ex2.html'>Brython_ex2</a></li></ul><li><a href='w10.html'>w10</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Schedule.html'>Schedule</a><li><a href='bubblerob.html'>bubblerob</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Brython_ex2.html'>Brython_ex2</a></li></ul><li><a href='w10.html'>w10</a><li><a href='portable Python.html'>portable Python</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,52 +141,54 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Brython_ex2 << <a href='Brython_ex2.html'>Previous</a> <br /><h1>w10</h1>
+    <div id="tipue_search_content">Brython_ex2 << <a href='Brython_ex2.html'>Previous</a> <a href='portable Python.html'>Next</a> >> portable Python<br /><h1>w10</h1>
 <div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 600; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">有關 CoppeliaSim zmqRemoteAPI 問題</div>
 <div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 600; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
-<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 600; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">Q.<br/>
-<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">1.What is zmqRemoteAPI, and how does it relate to CoppeliaSim?</div>
-<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">2.How do you establish a connection between a Python script and CoppeliaSim using zmqRemoteAPI?</div>
-<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">3.What are some common use cases for zmqRemoteAPI in CoppeliaSim?</div>
-<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">4.What are the advantages and disadvantages of using zmqRemoteAPI compared to other methods of communication between Python and CoppeliaSim?</div>
-<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">5.Can you give an example of a project or task that you could complete using zmqRemoteAPI in CoppeliaSim?
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 600; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">Q.</div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 600; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><br/>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><span style="color: #000000; background-color: #00ff00;">1.</span>What is zmqRemoteAPI, and how does it relate to CoppeliaSim?</div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><span style="color: #000000; background-color: #00ff00;">2.</span>How do you establish a connection between a Python script and CoppeliaSim using zmqRemoteAPI?</div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><span style="background-color: #00ff00;">3.</span>What are some common use cases for zmqRemoteAPI in CoppeliaSim?</div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><span style="background-color: #00ff00;">4.</span>What are the advantages and disadvantages of using zmqRemoteAPI compared to other methods of communication between Python and CoppeliaSim?</div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><span style="background-color: #00ff00;">5.</span>Can you give an example of a project or task that you could complete using zmqRemoteAPI in CoppeliaSim?</div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
+A.<br/>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"><span style="background-color: #00ff00;">1.</span>
+<p>zmqRemoteAPI 是一種輕量級、高效的通訊協議，用於將外部應用程式（例如 Python）與 CoppeliaSim 機器人模擬軟件連接起來。它允許使用者使用一組預定義的函數，從外部應用程式控制模擬。</p>
+<p>CoppeliaSim 是一種強大的 3D 模擬軟件，用於機器人和自動化開發。它提供了各種建模、模擬和控制機器人和其他自動化系統的工具和功能。使用 zmqRemoteAPI 和 CoppeliaSim 可以使使用者更輕鬆地控制和監視模擬。</p>
+<p></p>
+</div>
+<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">
 <div class="flex flex-grow flex-col gap-3">
 <div class="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap">
 <div class="markdown prose w-full break-words dark:prose-invert light">
-<p>1. zmqRemoteAPI 是由 CoppeliaSim 提供的一种通信接口，CoppeliaSim 是一款强大的 3D 仿真软件，广泛应用于机器人技术、自动化、虚拟现实等领域。zmqRemoteAPI 可以让开发人员使用各种编程语言（如 Python、C++、Java 等）编写代码，并通过该接口与 CoppeliaSim 进行交互和通信。</p>
-<p>借助 zmqRemoteAPI，开发人员可以控制 CoppeliaSim 中的物体、传感器和动作等，并接收从仿真场景中返回的数据，如机器人位置、传感器读数等。这种通信方式非常灵活，可以为 CoppeliaSim 提供更多的应用场景和功能。</p>
-<p>因此，zmqRemoteAPI 是 CoppeliaSim 中的一种通信接口，可以让开发人员使用各种编程语言与 CoppeliaSim 进行交互和通信，从而扩展了 CoppeliaSim 的功能和应用范围。</p>
-<p>2. 在 Python 中使用 zmqRemoteAPI 与 CoppeliaSim 建立连接，需要遵循以下步骤：</p>
+<p><span style="background-color: #00ff00;">2.</span></p>
+<p>要使用zmqRemoteAPI在Python腳本與CoppeliaSim之間建立連接，需要完成以下步驟：</p>
 <ol>
 <li>
-<p>启动 CoppeliaSim 并打开你的场景。</p>
+<p>下載並安裝ZeroMQ 請先至ZeroMQ官方網站下載ZeroMQ，並進行安裝。</p>
 </li>
 <li>
-<p>确认场景中的 remoteApi 功能已启用。你可以在 CoppeliaSim 菜单栏中找到 "Add-ons" -&gt; "Remote API" -&gt; "Enable remote API"。确保 "Enable the remote API server" 和 "Enable the remote API client" 都选中。</p>
+<p>啟用CoppeliaSim的遠程API 在CoppeliaSim中，需要啟用遠程API，方法是進入菜單欄中的"Tools"-&gt;"Remote API"，然後選擇"Enable remote API"，接著選擇"Legacy remote API"。啟用後，CoppeliaSim會自動打開一個端口，等待Python腳本連接。</p>
 </li>
 <li>
-<p>在 Python 中导入 vrep 模块，这是 CoppeliaSim 提供的 Python 接口。</p>
-</li>
-<li>
-<p>创建一个 vrep.simxOpMode_oneshot 和一个 vrep.simx_opmode_blocking 变量，它们用于定义远程API的操作模式。</p>
-</li>
-<li>
-<p>使用 vrep.simxStart 函数连接到 CoppeliaSim。该函数将返回一个客户端 ID，用于标识客户端并在后续的操作中使用。</p>
-</li>
-<li>
-<p>使用 vrep.simxGetObjectHandle 函数获取要控制的对象的句柄。</p>
-</li>
-<li>
-<p>使用 vrep.simxSetJointTargetPosition 或 vrep.simxSetJointTargetVelocity 函数设置关节目标位置或速度。</p>
-</li>
-<li>
-<p>使用 vrep.simxGetVisionSensorImage 函数获取传感器的图像。</p>
-</li>
-<li>
-<p>使用 vrep.simxFinish 函数断开与 CoppeliaSim 的连接。</p>
+<p>在Python腳本中使用zmqRemoteAPI 接下來，在Python腳本中使用zmqRemoteAPI與CoppeliaSim建立連接，示例程式碼如下：</p>
 </li>
 </ol>
-<p>3. 在 CoppeliaSim 中，zmqRemoteAPI 是一個非常有用的模塊，它可以用於以下一些常見的應用場景：</p>
+<p>           <img alt="" height="300" src="./../images/00.png" width="500"/></p>
+<p>          這段程式碼首先建立了一個ZMQ連接，並使用<code>send_string()</code>和<code>recv()</code>方法向                    CoppeliaSim發送和接收消息。在此示例中，我們向CoppeliaSim發送了兩條消息：第            一條是測試連接的消息，第二條是在CoppeliaSim中運行腳本的消息。當然，您可以              根據自己的需求發送不同的消息。</p>
+<ol start="4">
+<li>在CoppeliaSim中編寫適當的腳本 在Python腳本中發送"simxLoadScene()"等消息時，需要在CoppeliaSim中編寫相應的腳本來執行該操作。例如，如果要加載一個場景，需要在CoppeliaSim中編寫一個腳本來加載該場景。可以使用CoppeliaSim提供的Lua腳本語言來編寫這些腳本。在CoppeliaSim的安裝目錄下的"programming/remoteApiBindings/lib/libLua"文件夾中，可以找到相應的遠程API函數和範例腳本。</li>
+</ol>
+<p></p>
+<p><span style="background-color: #00ff00;">3. </span></p>
+<p>在 CoppeliaSim 中，zmqRemoteAPI 是一個非常有用的模塊，它可以用於以下一些常見的應用場景：</p>
 <ol>
 <li>
 <p>控制機器人：zmqRemoteAPI 可以用於控制機器人在 CoppeliaSim 模擬器中的運動和行為，包括設置關節位置、速度和力矩等參數，控制機器人的運動軌跡和姿態，以及獲取機器人的感測器數據和影像信息等。</p>
@@ -202,13 +204,36 @@ img.add_border {
 </li>
 </ol>
 <p>總之，zmqRemoteAPI 可以幫助使用者更加靈活地控制 CoppeliaSim 中的機器人和物體，從而實現更多的應用場景，如機器人控制、自主導航、自動化測試和物體檢測等。</p>
-&gt;
-<div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 600; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;"></div>
+<p></p>
+<p><span style="background-color: #00ff00;">4.</span></p>
+<p>zmqRemoteAPI 是一種輕量級和高效的通信協議，用於連接Python和CoppeliaSim。以下是使用zmqRemoteAPI與其他方法之間的優缺點比較：</p>
+<p>優點：</p>
+<ol>
+<li>快速和高效：zmqRemoteAPI使用ZeroMQ消息庫，以其快速和高效的消息傳遞能力而聞名。</li>
+<li>易於使用：zmqRemoteAPI是一個簡單易用的API，提供了一系列函數，可從Python腳本中控制模擬。</li>
+<li>跨語言支持：zmqRemoteAPI是一種跨語言協議，因此您可以使用任何支持ZeroMQ的編程語言。</li>
+<li>支持多個連接：zmqRemoteAPI支持多個連接，因此您可以將多個客戶端連接到單個CoppeliaSim實例。</li>
+</ol>
+<p>缺點：</p>
+<ol>
+<li>功能受限：儘管zmqRemoteAPI提供了一系列函數來控制CoppeliaSim，但與其他通信方法（如ROS或Python的Coppeliasim庫）相比，其功能受限。</li>
+<li>較不易使用：zmqRemoteAPI需要一些ZeroMQ和socket編程的知識，這對於新手用戶來說可能不太容易使用。</li>
+<li>可能出現錯誤：如果通信未正確配置，zmqRemoteAPI容易出現錯誤，這可能會導致消息丟失或模擬停滯等問題。</li>
+<li>彈性較小：與其他通信方法相比，zmqRemoteAPI的自定義彈性較小，因為它依賴於預定義的一組函數。</li>
+</ol>
+<p>總之，zmqRemoteAPI是用於連接Python和CoppeliaSim的快速和高效的通信協議，但與其他通信方法相比，其功能受限，需要一些ZeroMQ和socket編程的知識。它適用於簡單的模擬或效率至上的應用，但其他通信方法，如ROS或Python的Coppeliasim庫，可能更適合更複雜的應用程序。</p>
+<p></p>
+</div>
+<div class="markdown prose w-full break-words dark:prose-invert light"><span style="background-color: #00ff00;">5.</span></div>
+<div class="markdown prose w-full break-words dark:prose-invert light"><span style="background-color: #ffffff;"> </span></div>
+<div class="markdown prose w-full break-words dark:prose-invert light">
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData1" height="630" muted="true" width="1008">
+<source src="./../downloads/w10第五題/1.mp4" type="video/mp4"/></video></div>
 </div>
 </div>
 </div>
 </div>
-</div><br />Brython_ex2 << <a href='Brython_ex2.html'>Previous</a> </div>
+</div><br />Brython_ex2 << <a href='Brython_ex2.html'>Previous</a> <a href='portable Python.html'>Next</a> >> portable Python</div>
         
     <!-- footer -->
       <div class="container">
