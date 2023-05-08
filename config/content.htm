@@ -106,9 +106,17 @@ A.<br/>
 </div>
 </div>
 <h1>w11</h1>
+<p>5/1學校討論</p>
+<p>step1：將兩隻 bubbleRob 放入球場場景，更改程式碼中對應的名稱，並將記分板分數上限調整至99<br/>41023112<br/>上傳場景.ttt檔及zmq操控py檔</p>
+<p>step2：兩方球員連線主機，開啟模擬場景(主機IP:23020)，以zmq操控<br/>41023104 41023134</p>
+<p><span style="background-color: #ffff99;">問題：</span><br/>bubbleRob 移動過快，不易操控<br/>球場表面傾斜，遊戲開始時球會直接滾向一邊<br/>感測器無法分辨是球還是機器人，若 bubbleRob 接觸到球門感測器會觸發遊戲重新開始</p>
+<p><span style="background-color: #ffff99;">解決：</span><br/>將左右轉彎數值減少(-3.0, 3.0)改為(-1.0, 1.0)<br/>檢查球場圖檔並未有傾斜，應該是 coppeliasim 中地心引力的影響? <br/>將 bubbleRob 及 Wheel 更改為不可碰撞、不可測量、不可檢測</p>
 <p><a href="/downloads/完整.ttt">bubbleRob.ttt</a>   <a href="/downloads/bubbleRob_zmq_examples.7z">bubbleRob_zmq_examples.7z</a></p>
 <p><img alt="" height="623" src="/images/擷取.PNG" width="1107"/></p>
-<h1>Brython</h1>
+<p>記分板</p>
+<p>使用大中小三顆齒輪作動</p>
+<p>5/6 discord通話會議</p>
+<p></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
