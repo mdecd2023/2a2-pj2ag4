@@ -10,7 +10,7 @@
 <p>week9-建立 pj2 組別，場景中建立四顆 bubbleRob 並以 zmq 操控</p>
 <p>week10-協同查驗*5題</p>
 <p>week11-組員連線，場景觀看，計分板設計</p>
-<h1>bubblerob</h1>
+<p>week12-pj3 分組，檢查 pj2</p><h1>bubblerob</h1>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/UMXvuiwmFFo" title="YouTube video player" width="560"></iframe></p>
 <h1>w10</h1>
 <div style="box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Web', sans-serif; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 600; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px;">有關 CoppeliaSim zmqRemoteAPI 問題</div>
@@ -125,6 +125,7 @@ A.<br/>
 <p>由於原本採用齒輪設計的記分板無法使用，添加馬達於齒輪上嘗試作動失敗，因此參考別組記分板，使用改變特定對象的顏色來顯示數字。</p>
 <p><a href="/downloads/pj2ag4_zmq_bubbleRob.rar">pj2ag4_zmq_bubbleRob</a></p>
 <p><img alt="" height="349" src="/images/記分板場地.png" width="532"/></p>
+<p><strong>記分板程式</strong></p>
 <pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false">function sysCall_init()
     score1_1 = 0
     score1_2 = 0
@@ -213,7 +214,112 @@ function sysCall_actuation()
         sim.pauseSimulation()
     end
 end</pre>
-<p><br/><br/><br/><br/></p>
+<p><span style="background-color: #ffff99;">sysCall_init</span> 的函數，它在模擬開始時被調用，使 score1_1 到 score2_4 的變數都被初始化為 0，並將由數字 0 和 1 組成的列表賦值了名為s的變數。</p>
+<p><span style="background-color: #ffff99;">sim.getObject()</span>函數獲取模擬場景中的物體 "c0" 和 "c1"，通過使用相對路徑 "./"來定位。</p>
+<p><span style="background-color: #ffff99;">sim.setShapeColor()</span> 函數設置物體的顏色，使用{1, 0, 0}作為 RGB 顏色向量，使物體呈紅色。<span style="background-color: #ffff99;">sim.colorcomponent_ambient_diffuse</span><span> 參數指定該函數要設置的顏色分量。</span></p>
+<p>計分函數輸入兩個參數x和y，x代表要顯示哪一個數字的分數，y代表要顯示的是哪個分數的部分。二維數組s中每個元素都是一個由0和1組成的7位數，表示0到9這10個數字在顯示器上的狀態。</p>
+<p>使用for迴圈查找x所對應的數字，接著使用另一個for迴圈*遍歷該數字的所有顯示部分，並根據s數組的值來設置顯示器部件的顏色，以顯示分數。</p>
+<p>*在一個資料結構中依次訪問每一個元素的過程</p>
+<p><span>程式碼檢查是否達到得分上限(10分)。如果沒有達到，則檢查是否檢測到障礙物。如果檢測到了障礙物，則程式碼會更新分數(score1_1)，並將分數顯示在七段顯示器上。如果分數達到10分且之前的顯示器未達到最高值(9)，則分數顯示器會重新設置為0，而前一個分數顯示器會加1。</span></p>
+<p><strong>bubbleRob</strong></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false"># pip install pyzmq cbor keyboard
+from zmqRemoteApi import RemoteAPIClient
+import keyboard
+import random
+
+client = RemoteAPIClient('localhost', 23000)
+
+print('Program started')
+sim = client.getObject('sim')
+#sim.startSimulation()
+print('Simulation started')
+
+def setBubbleRobVelocity(leftWheelVelocity, rightWheelVelocity):
+    leftMotor = sim.getObject('/leftMotor')
+    rightMotor = sim.getObject('/rightMotor')
+    
+    sim.setJointTargetVelocity(leftMotor, leftWheelVelocity)
+    sim.setJointTargetVelocity(rightMotor, rightWheelVelocity)
+
+'''
+# Example usage 1:
+setBubbleRobVelocity(1.0, 1.0)
+time.sleep(2)
+setBubbleRobVelocity(0.0, 0.0)
+'''
+
+while True:
+    if keyboard.is_pressed('w'):
+        setBubbleRobVelocity(4.0, 4.0)
+    elif keyboard.is_pressed('s'):
+        setBubbleRobVelocity(-3.0, -3.0)
+    elif keyboard.is_pressed('a'):
+        setBubbleRobVelocity(-2.0, 2.0)
+    elif keyboard.is_pressed('d'):
+        setBubbleRobVelocity(2.0, -2.0)
+    elif keyboard.is_pressed('q'):
+        # stop simulation
+        sim.stopSimulation()
+    else:
+        setBubbleRobVelocity(0.0, 0.0)</pre>
+<p><strong>發球員</strong></p>
+<pre class="brush:lua;auto-links:false;toolbar:false" contenteditable="false"># pip install pyzmq cbor keyboard
+from zmqRemoteApi import RemoteAPIClient
+import keyboard
+import random
+
+client = RemoteAPIClient('localhost', 23000)
+
+print('Program started')
+sim = client.getObject('sim')
+sim.startSimulation()
+print('Simulation started')
+
+def avoid(x,y):
+    bubbleRob = sim.getObject('/bubbleRob')
+    bubbleRob2 = sim.getObject('/bubbleRob2')
+    b1=sim.getObjectPosition(bubbleRob,-1)
+    b2=sim.getObjectPosition(bubbleRob2,-1)
+    
+    while (((b1[0]&lt;x+0.5) and (b1[0]&gt;x-0.5)) and ((b1[1]&lt;y+0.5) and (b1[1]&gt;y-0.5)))or(((b2[0]&lt;x+0.5) and (b2[0]&gt;x-0.5)) and ((b2[1]&lt;y+0.5) and (b2[1]&gt;y-0.5))):
+        x=random.uniform(-1,1)
+        y=random.uniform(-1,1)
+       # print(x)
+       # print(y)
+    position2= [x, y, 2]
+    ball = sim.createPureShape(1, options, size, 1, None)
+    sim.setObjectPosition(ball, -1, position2)
+    
+size = [0.2, 0.2, 0.2]
+position = [0, 0, 2]
+options = 8
+def existball():
+    try:
+        Sphere= sim.getObject('/Sphere')
+    except Exception as e:
+        #print("Failed to get object: ", e)
+        return 1
+    return 0
+
+if existball()==1:    
+    ball = sim.createPureShape(1, options, size, 0.5, None)
+    sim.setObjectPosition(ball, -1, position)
+    ball = sim.getObject('/Sphere')
+    sim.setObjectSpecialProperty(ball, sim.objectspecialproperty_detectable)
+
+while True:
+
+    ball = sim.getObject('/Sphere')
+    ball_position =sim.getObjectPosition(ball,-1)
+    if ball_position[0]&lt;-2.28 or ball_position[0]&gt;2.28 :
+        sim.removeObject(ball)
+        avoid(random.uniform(-1,1),random.uniform(-1,1))
+        #avoid(0,2)
+        ball = sim.getObject('/Sphere')
+        sim.setObjectSpecialProperty(ball, sim.objectspecialproperty_detectable)</pre>
+<p><br/><br/><br/></p>
+<p></p>
+<p></p>
 <p></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
